@@ -1,5 +1,3 @@
----
-
 # 🚀 Cara Menjalankan Proyek Ini
 
 ## 🔄 Mode Development
@@ -21,5 +19,3 @@ npm run build
 ```
 
 > Perintah ini akan menghasilkan versi teroptimasi dari aplikasi yang siap untuk diunggah ke server/hosting.
-
----
