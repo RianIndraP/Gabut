@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
 @theme {
+    --color-putih: oklch(0.9732 0.0041 271.37);
     --color-ungu: oklch(0.5476 0.2943 298.78);
 }
