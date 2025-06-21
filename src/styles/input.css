@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+    --color-ungu: oklch(0.5476 0.2943 298.78);
+}
