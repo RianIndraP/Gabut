@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 
 @theme {
     --color-putih: oklch(0.9732 0.0041 271.37);
     --color-ungu: oklch(0.5476 0.2943 298.78);
     --font-roboto: "Roboto", sans-serif;
+    --font-nunito: "Nunito", sans-serif;
 }
 
 .font-roboto {
     font-optical-sizing: auto;
     font-variation-settings:
-    "wdth" 100;
+        "wdth" 100;
+}
+
+.font-nunito {
+    font-optical-sizing: auto;
 }
