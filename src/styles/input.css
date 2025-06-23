@@ -6,3 +6,9 @@
     --color-ungu: oklch(0.5476 0.2943 298.78);
     --font-roboto: "Roboto", sans-serif;
 }
+
+.font-roboto {
+    font-optical-sizing: auto;
+    font-variation-settings:
+    "wdth" 100;
+}
