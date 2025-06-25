@@ -46,42 +46,59 @@
 
 <body class="bg-putih">
 
+    <!-- Pembungkus Sidebar and Main -->
     <div class="flex">
-
+        <!-- Sidebar -->
         <div class="bg-white pb-3 w-[15vh] h-full text-center fixed left-0 top-0 overflow-y-auto z-10">
             <ul class="list-none text-black/20">
-                <li class="text-black text-3xl py-5 border-b-3 border-b-putih">
-                    <i class="fa-solid fa-bars"></i>
-                </li>
-                <li class="text-3xl py-8 my-1 bg-ungu/20 border-l-4 border-ungu text-ungu">
-                    <i class="fa-solid fa-cube"></i>
-                </li>
-                <li
-                    class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
-                    <i class="fa-solid fa-envelope"></i>
-                </li>
-                <li
-                    class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
-                    <i class="fa-solid fa-calendar-days"></i>
-                </li>
-                <li
-                    class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
-                    <i class="fa-solid fa-circle-check"></i>
-                </li>
-                <li
-                    class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
-                    <i class="fa-solid fa-book"></i>
-                </li>
-                <li
-                    class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
-                    <i class="fa-solid fa-gear"></i>
-                </li>
+                <a href="#">
+                    <li class="text-black text-3xl py-5 border-b-3 border-b-putih">
+                        <i class="fa-solid fa-bars"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="text-3xl py-8 my-1 bg-ungu/20 border-l-4 border-ungu text-ungu">
+                        <i class="fa-solid fa-cube"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
+                        <i class="fa-solid fa-envelope"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
+                        <i class="fa-solid fa-book"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-3 border-b-putih border-transparent text-3xl py-8 my-1 hover:bg-ungu/20 hover:border-l-ungu border-l-4 hover:text-ungu">
+                        <i class="fa-solid fa-gear"></i>
+                    </li>
+                </a>
             </ul>
         </div>
-
+        <!-- Main -->
         <div class="w-full h-full ml-[15vh]">
 
+            <!-- Navbar -->
             <div class="h-[11.3vh] bg-white border-l-3 border-l-putih flex items-center px-5">
+                <!-- Search Bar -->
                 <form action="" class="py-2 border-2 border-neutral-400 text-lg rounded-md flex items-center px-5">
                     <button type="submit" class="text-neutral-400 mr-4">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -109,6 +126,7 @@
                 </div>
             </div>
 
+            <!-- Overview -->
             <div class="m-8 bg-white rounded-3xl px-8 py-6">
                 <div class="flex items-center justify-between">
                     <span class="font-medium font-roboto text-xl">Overview</span>
@@ -204,7 +222,9 @@
                 </div>
             </div>
 
+            <!-- Sales & Costumer Overview -->
             <div class="flex justify-between m-8 space-x-8">
+                <!-- Sales Breakdown -->
                 <div class="bg-white w-full rounded-xl py-6 px-8">
                     <span class="font-roboto text-lg">Sales Breakdown</span>
                     <div class="my-8 mx-5 grid grid-cols-2 gap-4">
@@ -280,15 +300,248 @@
                                 <span class="text-black/40">$55-45%</span>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
-                <div class="bg-white h-8 w-full rounded-xl"></div>
+                <!-- Costumer Overview -->
+                <div class="bg-white w-full rounded-xl py-6 px-8">
+                    <span class="font-roboto text-lg">Customer Demograph</span>
+                    <div class="grid grid-cols-3 mt-4 gap-6">
+                        <!-- Age Group -->
+                        <div class="font-nunito font-semibold">
+                            <span class="font-bold text-xl">Age Group</span>
+                            <div class="grid grid-rows-3 mt-6 gap-5">
+                                <div
+                                    class="font-nunito font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-4">
+                                    <span>18 : 26</span>
+                                    <div class="h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-3/4 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40">20%</span>
+                                </div>
+                                <div
+                                    class="font-nunito font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-4">
+                                    <span>27 : 45</span>
+                                    <div class="h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-2/5 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40">20%</span>
+                                </div>
+                                <div
+                                    class="font-nunito font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-4">
+                                    <span>45 : 65</span>
+                                    <div class="h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-1/2 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40">20%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Costumer Img -->
+                        <div class="">
+                            <img src="assets/costumer.png" alt="costumer" class="h-[95%]">
+                        </div>
+                        <!-- Location -->
+                        <div class="font-nunito font-semibold">
+                            <span class="font-bold text-xl">Location</span>
+                            <div class="grid grid-rows-3 mt-6 gap-5">
+                                <div
+                                    class="font-nunito font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-4">
+                                    <span>Boston</span>
+                                    <div class="h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-2/3 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40">20%</span>
+                                </div>
+                                <div
+                                    class="font-nunito font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-4">
+                                    <span>New York</span>
+                                    <div class="h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-5/6 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40">20%</span>
+                                </div>
+                                <div
+                                    class="font-nunito font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-4">
+                                    <span>California</span>
+                                    <div class="h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-5/12 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40">20%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- Sales Breakdown -->
+            <div class="bg-white m-8 rounded-xl py-6">
+                <span class="font-roboto text-xl font-medium px-8">Sales Breakdown</span>
+                <table class="mt-4 font-nunito w-full border-collapse table-fixed">
+                    <thead>
+                        <tr class="border-y-2 border-neutral-200 text-left text-base">
+                            <th class="pl-8 py-4 w-48">Name</th>
+                            <th class="w-32">Status</th>
+                            <th class="w-24">Spent</th>
+                            <th class="w-24">Return</th>
+                            <th class="w-32">Cost Conversion</th>
+                            <th class="w-28">Cost Click</th>
+                            <th class="w-20">CTR</th>
+                            <th class="w-24">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-y-2 border-neutral-200 text-left text-lg">
+                            <td class="pl-8 py-4">General Test 01</td>
+                            <td class="py-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm "></div>
+                                    <span class="status-text">Paused</span>
+                                </div>
+                            </td>
+                            <td>$150</td>
+                            <td>$4.1K</td>
+                            <td>$12.54</td>
+                            <td>$0.29</td>
+                            <td>3.5%</td>
+                            <td class="py-4">
+                                <div class="flex justify-start">
+                                    <button
+                                        class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out "
+                                        data-active="false">
+                                        <span
+                                            class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-y-2 border-neutral-200 text-left text-lg">
+                            <td class="pl-8 py-4">General Test 02</td>
+                            <td class="py-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                                    <span class="status-text">Paused</span>
+                                </div>
+                            </td>
+                            <td>$150</td>
+                            <td>$4.1K</td>
+                            <td>$12.54</td>
+                            <td>$0.29</td>
+                            <td>3.5%</td>
+                            <td class="py-4">
+                                <div class="flex justify-start">
+                                    <button
+                                        class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out "
+                                        data-active="false">
+                                        <span
+                                            class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-y-2 border-neutral-200 text-left text-lg">
+                            <td class="pl-8 py-4">General Test 03</td>
+                            <td class="py-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm "></div>
+                                    <span class="status-text">Paused</span>
+                                </div>
+                            </td>
+                            <td>$150</td>
+                            <td>$4.1K</td>
+                            <td>$12.54</td>
+                            <td>$0.29</td>
+                            <td>3.5%</td>
+                            <td class="py-4">
+                                <div class="flex justify-start">
+                                    <button
+                                        class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out "
+                                        data-active="false">
+                                        <span
+                                            class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-y-2 border-neutral-200 text-left text-lg">
+                            <td class="pl-8 py-4">General Test 04</td>
+                            <td class="py-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm "></div>
+                                    <span class="status-text">Paused</span>
+                                </div>
+                            </td>
+                            <td>$150</td>
+                            <td>$4.1K</td>
+                            <td>$12.54</td>
+                            <td>$0.29</td>
+                            <td>3.5%</td>
+                            <td class="py-4">
+                                <div class="flex justify-start">
+                                    <button
+                                        class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out "
+                                        data-active="false">
+                                        <span
+                                            class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
+
+    <script>
+        // Event delegation - menangani semua toggle button
+        document.addEventListener('click', function (e) {
+            // Cek apakah yang diklik adalah toggle button
+            if (e.target.classList.contains('toggle-btn') || e.target.closest('.toggle-btn')) {
+                const button = e.target.classList.contains('toggle-btn') ? e.target : e.target.closest('.toggle-btn');
+                const knob = button.querySelector('.toggle-knob');
+                const row = button.closest('tr');
+                const statusCell = row.querySelector('td:nth-child(2)');
+                const statusDot = statusCell.querySelector('.status-dot');
+                const statusText = statusCell.querySelector('span');
+
+                // Toggle state
+                const isActive = button.dataset.active === 'true';
+                const newState = !isActive;
+
+                button.dataset.active = newState.toString();
+
+                if (newState) {
+                    // Aktifkan
+                    button.classList.remove('bg-gray-200');
+                    button.classList.add('bg-green-500');
+                    knob.classList.remove('translate-x-1');
+                    knob.classList.add('translate-x-6');
+
+                    // Update status visual
+                    statusDot.classList.remove('bg-orange-400', 'bg-red-400');
+                    statusDot.classList.add('bg-green-400');
+                    statusText.textContent = 'Active';
+                } else {
+                    // Nonaktifkan
+                    button.classList.remove('bg-green-500');
+                    button.classList.add('bg-gray-200');
+                    knob.classList.remove('translate-x-6');
+                    knob.classList.add('translate-x-1');
+
+                    // Update status visual
+                    statusDot.classList.remove('bg-green-400', 'bg-red-400');
+                    statusDot.classList.add('bg-orange-400');
+                    statusText.textContent = 'Paused';
+                }
+
+                // Optional: Log atau kirim ke server
+                const campaignName = row.querySelector('td:first-child').textContent;
+                console.log(`${campaignName}: ${newState ? 'Activated' : 'Deactivated'}`);
+            }
+        });
+    </script>
 </body>
 
 </html>

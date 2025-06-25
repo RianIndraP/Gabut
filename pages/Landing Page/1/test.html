@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/img/logo web 1.png" type="image/png" sizes="16x16">
+    <title>Gabut - Landing Page - 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+
+        .progress-circle {
+            fill: none;
+            stroke: #EFEDF8;
+            stroke-width: 6;
+        }
+
+        .progress-bar-1 {
+            fill: none;
+            stroke-width: 12;
+            stroke-linecap: round;
+            stroke-dasharray: 314;
+            stroke-dashoffset: 109.9;
+            transition: stroke-dashoffset 0.5s ease-in-out;
+        }
+
+        .progress-bar-2 {
+            fill: none;
+            stroke-width: 12;
+            stroke-linecap: round;
+            stroke-dasharray: 314;
+            stroke-dashoffset: 204.1;
+            transition: stroke-dashoffset 0.5s ease-in-out;
+        }
+
+        /* Sidebar overlay untuk mobile */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 20;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Sidebar transitions */
+        .sidebar {
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.collapsed {
+            transform: translateX(-100%);
+        }
+
+        @media (min-width: 768px) {
+            .sidebar.collapsed {
+                transform: none;
+            }
+        }
+
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Sidebar Overlay untuk Mobile -->
+    <div class="sidebar-overlay md:hidden" id="sidebarOverlay"></div>
+
+    <!-- Pembungkus Sidebar and Main -->
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <div class="sidebar bg-white pb-3 w-20 md:w-24 h-full text-center fixed left-0 top-0 overflow-y-auto z-30 custom-scrollbar"
+            id="sidebar">
+            <ul class="list-none text-black/20">
+                <button class="md:hidden absolute top-4 right-4 text-black z-40" id="closeSidebar">
+                    <i class="fa-solid fa-times text-xl"></i>
+                </button>
+                <a href="#" id="toggleSidebar">
+                    <li class="text-black text-2xl md:text-3xl py-4 md:py-5 border-b-2 border-b-gray-100">
+                        <i class="fa-solid fa-bars"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="text-2xl md:text-3xl py-6 md:py-8 my-1 bg-purple-500/20 border-l-4 border-purple-500 text-purple-500">
+                        <i class="fa-solid fa-cube"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-2 border-b-gray-100 border-transparent text-2xl md:text-3xl py-6 md:py-8 my-1 hover:bg-purple-500/20 hover:border-l-purple-500 border-l-4 hover:text-purple-500">
+                        <i class="fa-solid fa-envelope"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-2 border-b-gray-100 border-transparent text-2xl md:text-3xl py-6 md:py-8 my-1 hover:bg-purple-500/20 hover:border-l-purple-500 border-l-4 hover:text-purple-500">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-2 border-b-gray-100 border-transparent text-2xl md:text-3xl py-6 md:py-8 my-1 hover:bg-purple-500/20 hover:border-l-purple-500 border-l-4 hover:text-purple-500">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-2 border-b-gray-100 border-transparent text-2xl md:text-3xl py-6 md:py-8 my-1 hover:bg-purple-500/20 hover:border-l-purple-500 border-l-4 hover:text-purple-500">
+                        <i class="fa-solid fa-book"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li
+                        class="transition-colors ease-in-out duration-300 hover:border-b-transparent border-b-2 border-b-gray-100 border-transparent text-2xl md:text-3xl py-6 md:py-8 my-1 hover:bg-purple-500/20 hover:border-l-purple-500 border-l-4 hover:text-purple-500">
+                        <i class="fa-solid fa-gear"></i>
+                    </li>
+                </a>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="w-full h-full ml-0 md:ml-20 lg:ml-24 transition-all duration-300" id="mainContent">
+            <!-- Navbar -->
+            <div class="h-16 md:h-20 bg-white border-l-2 border-l-gray-100 flex items-center px-4 md:px-5">
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden mr-4 text-black" id="openSidebar">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+
+                <!-- Search Bar -->
+                <form action=""
+                    class="py-2 border-2 border-neutral-400 text-sm md:text-lg rounded-md flex items-center px-3 md:px-5 flex-1 max-w-md">
+                    <button type="submit" class="text-neutral-400 mr-2 md:mr-4">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input type="search" name="" id=""
+                        class="placeholder:text-neutral-400 w-full outline-none bg-transparent text-sm md:text-base"
+                        placeholder="Search here something">
+                </form>
+
+                <div class="flex items-center ml-auto space-x-2 md:space-x-4">
+                    <div
+                        class="bg-gray-100 relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl">
+                        <i class="text-zinc-400 fa-solid fa-bell text-xl md:text-2xl"></i>
+                        <span
+                            class="bg-red-400 opacity-75 absolute w-3 h-3 md:w-3.5 md:h-3.5 top-1.5 right-2.5 md:top-2 md:right-3.5 rounded-full animate-ping transition-colors"></span>
+                        <span
+                            class="bg-red-500 absolute w-3 h-3 md:w-3.5 md:h-3.5 top-1.5 right-2.5 md:top-2 md:right-3.5 rounded-full"></span>
+                    </div>
+
+                    <!-- Profile Section - Hidden on small screens -->
+                    <div class="hidden sm:flex items-center space-x-3">
+                        <div class="w-10 h-10 md:w-12 md:h-12">
+                            <div class="w-full h-full bg-gray-300 rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-user text-gray-600"></i>
+                            </div>
+                        </div>
+                        <div class="hidden lg:flex flex-col space-y-1 h-10 md:h-12">
+                            <h1 class="font-bold text-sm md:text-base">Ahmed Adley H.</h1>
+                            <h2 class="text-neutral-600 text-xs">Super Admin</h2>
+                        </div>
+                        <div class="text-white h-10 md:h-12 bg-purple-500 px-2 md:px-2.5 rounded-md flex items-center">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <div class="m-4 md:m-8 bg-white rounded-2xl md:rounded-3xl px-4 md:px-8 py-4 md:py-6">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <span class="font-medium text-lg md:text-xl">Overview</span>
+                    <button type="button"
+                        class="text-neutral-700 space-x-2 md:space-x-3 border-neutral-400 border-2 p-2 rounded-lg text-sm md:text-base">
+                        <i class="fa-solid fa-calendar-day"></i>
+                        <span class="font-semibold">Last 7 days</span>
+                        <i class="ml-1 fa-solid fa-caret-down"></i>
+                    </button>
+                </div>
+
+                <div class="my-4 md:my-6 flex flex-col lg:flex-row gap-4 md:gap-8">
+                    <!-- Total Sales -->
+                    <div
+                        class="bg-gray-50 w-full rounded-xl flex flex-col sm:flex-row justify-between px-6 md:px-10 py-6 md:py-10 items-center">
+                        <div class="flex items-center justify-center mb-4 sm:mb-0">
+                            <div class="relative">
+                                <div class="relative w-24 h-24 md:w-36 md:h-36">
+                                    <svg class="progress-ring w-full h-full" viewBox="0 0 120 120">
+                                        <circle class="progress-circle" cx="60" cy="60" r="50"></circle>
+                                        <circle class="progress-bar-1 stroke-cyan-400" cx="60" cy="60" r="50"></circle>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span class="text-2xl md:text-4xl font-bold text-gray-800">65%</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute top-1 -right-3 md:top-2 md:-right-5 w-2 h-2 md:w-3.5 md:h-3.5 bg-green-400 rounded-full">
+                                </div>
+                                <div
+                                    class="absolute bottom-4 -right-1 md:bottom-6 md:-right-2 w-1 h-1 md:w-1.5 md:h-1.5 bg-cyan-400 rounded-full">
+                                </div>
+                                <div
+                                    class="absolute bottom-1 -left-4 md:bottom-2 md:-left-6 w-1.5 h-1.5 md:w-2.5 md:h-2.5 bg-purple-400 rounded-full">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center sm:text-left space-y-2 md:space-y-3">
+                            <span class="font-bold text-2xl md:text-4xl">$1500</span>
+                            <span class="text-neutral-400 text-sm md:text-base">Total Sales</span>
+                        </div>
+                    </div>
+
+                    <!-- Total Expense -->
+                    <div
+                        class="bg-gray-50 w-full rounded-xl flex flex-col sm:flex-row justify-between px-6 md:px-10 py-6 md:py-10 items-center">
+                        <div class="flex items-center justify-center mb-4 sm:mb-0">
+                            <div class="relative">
+                                <div class="relative w-24 h-24 md:w-36 md:h-36">
+                                    <svg class="progress-ring w-full h-full" viewBox="0 0 120 120">
+                                        <circle class="progress-circle" cx="60" cy="60" r="50"></circle>
+                                        <circle class="progress-bar-2 stroke-purple-400" cx="60" cy="60" r="50">
+                                        </circle>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span class="text-2xl md:text-4xl font-bold text-gray-800">35%</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute top-1 -right-3 md:top-2 md:-right-5 w-2 h-2 md:w-3.5 md:h-3.5 bg-green-400 rounded-full">
+                                </div>
+                                <div
+                                    class="absolute bottom-4 -right-1 md:bottom-6 md:-right-2 w-1 h-1 md:w-1.5 md:h-1.5 bg-cyan-400 rounded-full">
+                                </div>
+                                <div
+                                    class="absolute bottom-1 -left-4 md:bottom-2 md:-left-6 w-1.5 h-1.5 md:w-2.5 md:h-2.5 bg-purple-400 rounded-full">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center sm:text-left space-y-2 md:space-y-3">
+                            <span class="font-bold text-2xl md:text-4xl">$500</span>
+                            <span class="text-neutral-400 text-sm md:text-base">Total<br>Expense</span>
+                        </div>
+                    </div>
+
+                    <!-- Total Profit -->
+                    <div
+                        class="bg-gray-50 w-full rounded-xl flex flex-col sm:flex-row justify-between px-6 md:px-10 py-6 md:py-10 items-center">
+                        <div class="flex items-center justify-center mb-4 sm:mb-0">
+                            <div class="relative">
+                                <div class="relative w-24 h-24 md:w-36 md:h-36">
+                                    <svg class="progress-ring w-full h-full" viewBox="0 0 120 120">
+                                        <circle class="progress-circle" cx="60" cy="60" r="50"></circle>
+                                        <circle class="progress-bar-2 stroke-green-400" cx="60" cy="60" r="50"></circle>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span class="text-2xl md:text-4xl font-bold text-gray-800">35%</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute top-1 -right-3 md:top-2 md:-right-5 w-2 h-2 md:w-3.5 md:h-3.5 bg-green-400 rounded-full">
+                                </div>
+                                <div
+                                    class="absolute bottom-4 -right-1 md:bottom-6 md:-right-2 w-1 h-1 md:w-1.5 md:h-1.5 bg-cyan-400 rounded-full">
+                                </div>
+                                <div
+                                    class="absolute bottom-1 -left-4 md:bottom-2 md:-left-6 w-1.5 h-1.5 md:w-2.5 md:h-2.5 bg-purple-400 rounded-full">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-center sm:text-left space-y-2 md:space-y-3">
+                            <span class="font-bold text-2xl md:text-4xl">$1000</span>
+                            <span class="text-neutral-400 text-sm md:text-base">Total Profit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales & Customer Overview -->
+            <div class="flex flex-col xl:flex-row justify-between m-4 md:m-8 gap-4 md:gap-8">
+                <!-- Sales Breakdown -->
+                <div class="bg-white w-full rounded-xl py-4 md:py-6 px-4 md:px-8">
+                    <span class="text-base md:text-lg font-medium">Sales Breakdown</span>
+                    <div class="my-4 md:my-8 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                        <div class="bg-neutral-50 flex p-3 md:p-4 rounded-lg items-center">
+                            <div class="bg-neutral-100 p-2 rounded-xl flex-shrink-0">
+                                <div
+                                    class="w-12 md:w-16 h-12 md:h-16 bg-gray-300 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-volume-high text-gray-600 text-lg md:text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="font-semibold ml-3 md:ml-6 w-full flex flex-col space-y-2">
+                                <span class="text-sm md:text-base">Ad Span</span>
+                                <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                    <div class="h-full w-[80%] bg-cyan-400 rounded-full"></div>
+                                </div>
+                                <span class="text-black/40 text-xs md:text-sm">$80-20%</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-neutral-50 flex p-3 md:p-4 rounded-lg items-center">
+                            <div class="bg-neutral-100 p-2 rounded-xl flex-shrink-0">
+                                <div
+                                    class="w-12 md:w-16 h-12 md:h-16 bg-gray-300 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-chart-line text-gray-600 text-lg md:text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="font-semibold ml-3 md:ml-6 w-full flex flex-col space-y-2">
+                                <span class="text-sm md:text-base">Upsell</span>
+                                <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                    <div class="h-full w-[50%] bg-cyan-400 rounded-full"></div>
+                                </div>
+                                <span class="text-black/40 text-xs md:text-sm">$50-50%</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-neutral-50 flex p-3 md:p-4 rounded-lg items-center">
+                            <div class="bg-neutral-100 p-2 rounded-xl flex-shrink-0">
+                                <div
+                                    class="w-12 md:w-16 h-12 md:h-16 bg-gray-300 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-users text-gray-600 text-lg md:text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="font-semibold ml-3 md:ml-6 w-full flex flex-col space-y-2">
+                                <span class="text-sm md:text-base">Employees</span>
+                                <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                    <div class="h-full w-[60%] bg-cyan-400 rounded-full"></div>
+                                </div>
+                                <span class="text-black/40 text-xs md:text-sm">$60-40%</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-neutral-50 flex p-3 md:p-4 rounded-lg items-center">
+                            <div class="bg-neutral-100 p-2 rounded-xl flex-shrink-0">
+                                <div
+                                    class="w-12 md:w-16 h-12 md:h-16 bg-gray-300 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-box text-gray-600 text-lg md:text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="font-semibold ml-3 md:ml-6 w-full flex flex-col space-y-2">
+                                <span class="text-sm md:text-base">Bundles</span>
+                                <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                    <div class="h-full w-[75%] bg-cyan-400 rounded-full"></div>
+                                </div>
+                                <span class="text-black/40 text-xs md:text-sm">$75-25%</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-neutral-50 flex p-3 md:p-4 rounded-lg items-center">
+                            <div class="bg-neutral-100 p-2 rounded-xl flex-shrink-0">
+                                <div
+                                    class="w-12 md:w-16 h-12 md:h-16 bg-gray-300 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-mobile-alt text-gray-600 text-lg md:text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="font-semibold ml-3 md:ml-6 w-full flex flex-col space-y-2">
+                                <span class="text-sm md:text-base">Apps</span>
+                                <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                    <div class="h-full w-[35%] bg-cyan-400 rounded-full"></div>
+                                </div>
+                                <span class="text-black/40 text-xs md:text-sm">$35-65%</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-neutral-50 flex p-3 md:p-4 rounded-lg items-center">
+                            <div class="bg-neutral-100 p-2 rounded-xl flex-shrink-0">
+                                <div
+                                    class="w-12 md:w-16 h-12 md:h-16 bg-gray-300 rounded flex items-center justify-center">
+                                    <i class="fa-solid fa-shopping-cart text-gray-600 text-lg md:text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="font-semibold ml-3 md:ml-6 w-full flex flex-col space-y-2">
+                                <span class="text-sm md:text-base">Abandoned Cart</span>
+                                <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                    <div class="h-full w-[55%] bg-cyan-400 rounded-full"></div>
+                                </div>
+                                <span class="text-black/40 text-xs md:text-sm">$55-45%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Overview -->
+                <div class="bg-white w-full rounded-xl py-4 md:py-6 px-4 md:px-8">
+                    <span class="text-base md:text-lg font-medium">Customer Demograph</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 mt-4 gap-4 md:gap-6">
+                        <!-- Age Group -->
+                        <div class="font-semibold">
+                            <span class="font-bold text-lg md:text-xl">Age Group</span>
+                            <div class="grid grid-rows-3 mt-4 md:mt-6 gap-3 md:gap-5">
+                                <div
+                                    class="font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-3 md:p-4">
+                                    <span class="text-sm md:text-base">18 : 26</span>
+                                    <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-3/4 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40 text-xs md:text-sm">20%</span>
+                                </div>
+                                <div
+                                    class="font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-3 md:p-4">
+                                    <span class="text-sm md:text-base">27 : 45</span>
+                                    <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-2/5 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40 text-xs md:text-sm">20%</span>
+                                </div>
+                                <div
+                                    class="font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-3 md:p-4">
+                                    <span class="text-sm md:text-base">45 : 65</span>
+                                    <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-1/2 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40 text-xs md:text-sm">20%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer Image -->
+                        <div class="flex justify-center items-center">
+                            <div
+                                class="w-24 h-24 md:w-32 md:h-32 bg-gray-300 rounded-full flex items-center justify-center">
+                                <i class="fa-solid fa-users text-gray-600 text-2xl md:text-3xl"></i>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="font-semibold">
+                            <span class="font-bold text-lg md:text-xl">Location</span>
+                            <div class="grid grid-rows-3 mt-4 md:mt-6 gap-3 md:gap-5">
+                                <div
+                                    class="font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-3 md:p-4">
+                                    <span class="text-sm md:text-base">Boston</span>
+                                    <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-2/3 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40 text-xs md:text-sm">20%</span>
+                                </div>
+                                <
+                                    class="font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-3 md:p-4">
+                                    <span class="text-sm md:text-base">New York</span>
+                                    <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                        <div class="h-full w-5/6 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                    <span class="text-black/40 text-xs md:text-sm">20% </span>
+                            </div>
+                            <div
+                                class="font-semibold w-full flex flex-col space-y-2 bg-neutral-50 rounded-lg p-3 md:p-4">
+                                <span class="text-sm md:text-base">California</span>
+                                <div class="h-2 md:h-3 bg-neutral-200 rounded-full">
+                                    <div class="h-full w-5/12 bg-cyan-400 rounded-full"></div>
+                                </div>
+                                <span class="text-black/40 text-xs md:text-sm">20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sales Breakdown Table -->
+        <div class="bg-white m-4 md:m-8 rounded-xl py-4 md:py-6">
+            <span class="text-lg md:text-xl font-medium px-4 md:px-8">Sales Breakdown</span>
+
+            <!-- Mobile Card View -->
+            <div class="block lg:hidden mt-4 px-4 md:px-8 space-y-4">
+                <!-- Card 1 -->
+                <div class="bg-neutral-50 rounded-lg p-4 space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold text-base">General Test 01</h3>
+                        <div class="flex justify-start">
+                            <button
+                                class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out"
+                                data-active="false">
+                                <span
+                                    class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                        <span class="status-text text-sm">Paused</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div>
+                            <span class="text-gray-500">Spent:</span>
+                            <span class="font-semibold ml-1">$150</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Return:</span>
+                            <span class="font-semibold ml-1">$4.1K</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Cost Conv:</span>
+                            <span class="font-semibold ml-1">$12.54</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Cost Click:</span>
+                            <span class="font-semibold ml-1">$0.29</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">CTR:</span>
+                            <span class="font-semibold ml-1">3.5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-50 rounded-lg p-4 space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold text-base">General Test 02</h3>
+                        <div class="flex justify-start">
+                            <button
+                                class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out"
+                                data-active="false">
+                                <span
+                                    class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                        <span class="status-text text-sm">Paused</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div>
+                            <span class="text-gray-500">Spent:</span>
+                            <span class="font-semibold ml-1">$150</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Return:</span>
+                            <span class="font-semibold ml-1">$4.1K</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Cost Conv:</span>
+                            <span class="font-semibold ml-1">$12.54</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Cost Click:</span>
+                            <span class="font-semibold ml-1">$0.29</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">CTR:</span>
+                            <span class="font-semibold ml-1">3.5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-50 rounded-lg p-4 space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold text-base">General Test 03</h3>
+                        <div class="flex justify-start">
+                            <button
+                                class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out"
+                                data-active="false">
+                                <span
+                                    class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                        <span class="status-text text-sm">Paused</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div>
+                            <span class="text-gray-500">Spent:</span>
+                            <span class="font-semibold ml-1">$150</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Return:</span>
+                            <span class="font-semibold ml-1">$4.1K</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Cost Conv:</span>
+                            <span class="font-semibold ml-1">$12.54</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Cost Click:</span>
+                            <span class="font-semibold ml-1">$0.29</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">CTR:</span>
+                            <span class="font-semibold ml-1">3.5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-neutral-50 rounded-lg p-4 space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold text-base">General Test 04</h3>
+                        <div class="flex justify-start">
+                            <button
+                                class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out"
+                                data-active="false">
+                                <span
+                                    class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                        <span class="status-text text-sm">Paused</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div>
+                            <span class="text-gray-500">Spent:</span>
+                            <span class="font-semibold ml-1">$150</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Return:</span>
+                            <span class="font-semibold ml-1">$4.1K</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Cost Conv:</span>
+                            <span class="font-semibold ml-1">$12.54</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Cost Click:</span>
+                            <span class="font-semibold ml-1">$0.29</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">CTR:</span>
+                            <span class="font-semibold ml-1">3.5%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Table View -->
+            <div class="hidden lg:block overflow-x-auto">
+                <table class="mt-4 w-full border-collapse table-fixed min-w-[800px]">
+                    <thead>
+                        <tr class="border-y-2 border-neutral-200 text-left text-base">
+                            <th class="pl-8 py-4 w-48">Name</th>
+                            <th class="w-32">Status</th>
+                            <th class="w-24">Spent</th>
+                            <th class="w-24">Return</th>
+                            <th class="w-32">Cost Conversion</th>
+                            <th class="w-28">Cost Click</th>
+                            <th class="w-20">CTR</th>
+                            <th class="w-24">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-y-2 border-neutral-200 text-left text-lg">
+                            <td class="pl-8 py-4">General Test 01</td>
+                            <td class="py-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                                    <span class="status-text">Paused</span>
+                                </div>
+                            </td>
+                            <td>$150</td>
+                            <td>$4.1K</td>
+                            <td>$12.54</td>
+                            <td>$0.29</td>
+                            <td>3.5%</td>
+                            <td class="py-4">
+                                <div class="flex justify-start">
+                                    <button
+                                        class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out"
+                                        data-active="false">
+                                        <span
+                                            class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-y-2 border-neutral-200 text-left text-lg">
+                            <td class="pl-8 py-4">General Test 02</td>
+                            <td class="py-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                                    <span class="status-text">Paused</span>
+                                </div>
+                            </td>
+                            <td>$150</td>
+                            <td>$4.1K</td>
+                            <td>$12.54</td>
+                            <td>$0.29</td>
+                            <td>3.5%</td>
+                            <td class="py-4">
+                                <div class="flex justify-start">
+                                    <button
+                                        class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out"
+                                        data-active="false">
+                                        <span
+                                            class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-y-2 border-neutral-200 text-left text-lg">
+                            <td class="pl-8 py-4">General Test 03</td>
+                            <td class="py-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                                    <span class="status-text">Paused</span>
+                                </div>
+                            </td>
+                            <td>$150</td>
+                            <td>$4.1K</td>
+                            <td>$12.54</td>
+                            <td>$0.29</td>
+                            <td>3.5%</td>
+                            <td class="py-4">
+                                <div class="flex justify-start">
+                                    <button
+                                        class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out"
+                                        data-active="false">
+                                        <span
+                                            class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-y-2 border-neutral-200 text-left text-lg">
+                            <td class="pl-8 py-4">General Test 04</td>
+                            <td class="py-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="status-dot h-3 w-3 bg-orange-400 rounded-sm"></div>
+                                    <span class="status-text">Paused</span>
+                                </div>
+                            </td>
+                            <td>$150</td>
+                            <td>$4.1K</td>
+                            <td>$12.54</td>
+                            <td>$0.29</td>
+                            <td>3.5%</td>
+                            <td class="py-4">
+                                <div class="flex justify-start">
+                                    <button
+                                        class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out"
+                                        data-active="false">
+                                        <span
+                                            class="toggle-knob inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out translate-x-1"></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // Sidebar Toggle Functionality
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const openSidebar = document.getElementById('openSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const toggleSidebar = document.getElementById('toggleSidebar');
+        const mainContent = document.getElementById('mainContent');
+
+        // Open sidebar on mobile
+        openSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('collapsed');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close sidebar on mobile
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.add('collapsed');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.add('collapsed');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Initialize sidebar state on mobile
+        function initializeSidebar() {
+            if (window.innerWidth < 768) {
+                sidebar.classList.add('collapsed');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else {
+                sidebar.classList.remove('collapsed');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Initialize on load
+        initializeSidebar();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            initializeSidebar();
+        });
+
+        // Toggle Button Functionality (existing functionality)
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('toggle-btn') || e.target.closest('.toggle-btn')) {
+                const button = e.target.classList.contains('toggle-btn') ? e.target : e.target.closest('.toggle-btn');
+                const knob = button.querySelector('.toggle-knob');
+
+                // Find status elements - works for both table and card views
+                let statusDot, statusText;
+                const cardContainer = button.closest('.bg-neutral-50');
+
+                if (cardContainer) {
+                    // Card view
+                    statusDot = cardContainer.querySelector('.status-dot');
+                    statusText = cardContainer.querySelector('.status-text');
+                } else {
+                    // Table view
+                    const row = button.closest('tr');
+                    const statusCell = row.querySelector('td:nth-child(2)');
+                    statusDot = statusCell.querySelector('.status-dot');
+                    statusText = statusCell.querySelector('.status-text');
+                }
+
+                // Toggle state
+                const isActive = button.dataset.active === 'true';
+                const newState = !isActive;
+
+                button.dataset.active = newState.toString();
+
+                if (newState) {
+                    // Activate
+                    button.classList.remove('bg-gray-200');
+                    button.classList.add('bg-green-500');
+                    knob.classList.remove('translate-x-1');
+                    knob.classList.add('translate-x-6');
+
+                    // Update status visual
+                    statusDot.classList.remove('bg-orange-400', 'bg-red-400');
+                    statusDot.classList.add('bg-green-400');
+                    statusText.textContent = 'Active';
+                } else {
+                    // Deactivate
+                    button.classList.remove('bg-green-500');
+                    button.classList.add('bg-gray-200');
+                    knob.classList.remove('translate-x-6');
+                    knob.classList.add('translate-x-1');
+
+                    // Update status visual
+                    statusDot.classList.remove('bg-green-400', 'bg-red-400');
+                    statusDot.classList.add('bg-orange-400');
+                    statusText.textContent = 'Paused';
+                }
+
+                // Optional: Log or send to server
+                let campaignName;
+                if (cardContainer) {
+                    campaignName = cardContainer.querySelector('h3').textContent;
+                } else {
+                    const row = button.closest('tr');
+                    campaignName = row.querySelector('td:first-child').textContent;
+                }
+                console.log(`${campaignName}: ${newState ? 'Activated' : 'Deactivated'}`);
+            }
+        });
+    </script>
+</body>
+
+</html>
