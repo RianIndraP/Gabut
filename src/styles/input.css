@@ -7,6 +7,8 @@
     --color-ungu: oklch(0.5476 0.2943 298.78);
     --font-roboto: "Roboto", sans-serif;
     --font-nunito: "Nunito", sans-serif;
+    --radius-3.5xl: 1.75rem;
+    --radius-5xl: 2.25rem;
 }
 
 .font-roboto {

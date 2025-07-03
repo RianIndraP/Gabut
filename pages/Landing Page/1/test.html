@@ -41,9 +41,6 @@
             /* 314 - (314 * 35) / 100 */
             transition: stroke-dashoffset 0.5s ease-in-out;
         }
-        @media screen and (max-width: px) {
-            
-        }
     </style>
 </head>
 
@@ -111,7 +108,6 @@
             </ul>
         </div>
 
-
         <!-- Main Content -->
         <div class="h-full lg:ml-[15vh] ml-0">
             <!-- Navbar -->
@@ -167,7 +163,7 @@
 
 
             <!-- Overview -->
-            <div class="m-8 bg-white rounded-3xl px-6 py-6">
+            <div class="m-4 lg:m-6 xl:m-8 bg-white rounded-3.5xl xl:rounded-5xl p-4 xl:p-6">
                 <!-- Header -->
                 <div class="flex items-center flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <span class="font-medium font-roboto text-xl">Overview</span>
@@ -179,13 +175,13 @@
                     </button>
                 </div>
                 <!-- Stats Cards -->
-                <div class="my-6 space-x-2 lg:space-x-6 flex">
+                <div class="mt-4 xl:mt-6 space-x-4 xl:space-x-6 flex">
                     <!-- Card 1 -->
-                    <div class="bg-gray-50 w-full rounded-xl flex justify-between p-2 sm:p-6 lg:p-10 items-center">
+                    <div class="bg-gray-50 w-full rounded-xl flex justify-between p-2 sm:p-6 lg:pl-4 lg:pr-8 xl:p-10 items-center">
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div class="relative">
                                 <!-- Main progress circle -->
-                                <div class="relative w-16 h-16 sm:w-25 sm:h-25 lg:w-36 lg:h-36">
+                                <div class="relative w-16 h-16 sm:w-25 sm:h-25 lg:w-34 lg:h-34">
                                     <svg class="progress-ring w-full h-full" viewBox="0 0 120 120">
                                         <!-- Background circle -->
                                         <circle class="progress-circle" cx="60" cy="60" r="50"></circle>
@@ -196,26 +192,26 @@
                                     <!-- Percentage text -->
                                     <div class="absolute inset-0 flex items-center justify-center">
                                         <span
-                                            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">65%</span>
+                                            class="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-800">65%</span>
                                     </div>
                                 </div>
                                 <!-- Decorative dots -->
-                                <div class="absolute top-0 -right-2 w-3.5 h-3.5 bg-green-400 rounded-full"></div>
-                                <div class="absolute bottom-2 right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                                <div class="absolute bottom-2 -left-3 w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute top-0 -right-2 w-3.5 h-3.5 bg-green-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute bottom-2 right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute bottom-2 -left-3 w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
                             </div>
                         </div>
-                        <div class="text-center sm:text-left">
-                            <span class="font-bold font-nunito text-xl sm:text-2xl lg:text-4xl block">$1500</span>
+                        <div class="text-center sm:text-left lg:pl-2">
+                            <span class="font-bold font-nunito text-xl sm:text-2xl lg:text-3xl xl:text-4xl block">$1500</span>
                             <span class="font-roboto text-neutral-400 text-sm lg-text-base">Total Sales</span>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-gray-50 w-full rounded-xl flex justify-between p-6 lg:p-10 items-center">
+                    <div class="bg-gray-50 w-full rounded-xl flex justify-between p-2 sm:p-6 lg:pl-4 lg:pr-6 xl:p-10 items-center">
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div class="relative">
                                 <!-- Main progress circle -->
-                                <div class="relative w-16 h-16 sm:w-25 sm:h-25 lg:w-36 lg:h-36">
+                                <div class="relative w-16 h-16 sm:w-25 sm:h-25 lg:w-34 lg:h-34">
                                     <svg class="progress-ring w-full h-full" viewBox="0 0 120 120">
                                         <!-- Background circle -->
                                         <circle class="progress-circle" cx="60" cy="60" r="50"></circle>
@@ -226,26 +222,26 @@
                                     <!-- Percentage text -->
                                     <div class="absolute inset-0 flex items-center justify-center">
                                         <span
-                                            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">35%</span>
+                                            class="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-800">35%</span>
                                     </div>
                                 </div>
                                 <!-- Decorative dots -->
-                                <div class="absolute top-0 -right-2 w-3.5 h-3.5 bg-green-400 rounded-full"></div>
-                                <div class="absolute bottom-2 right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                                <div class="absolute bottom-2 -left-3 w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute top-0 -right-2 w-3.5 h-3.5 bg-green-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute bottom-2 right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute bottom-2 -left-3 w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
                             </div>
                         </div>
-                        <div class="text-center sm:text-left">
-                            <span class="font-bold font-nunito text-xl sm:text-2xl lg:text-4xl block">$500</span>
+                        <div class="text-center sm:text-left lg:pl-2">
+                            <span class="font-bold font-nunito text-xl sm:text-2xl lg:text-3xl xl:text-4xl block">$500</span>
                             <span class="font-roboto text-neutral-400 text-sm lg:text-base">Total Expense</span>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="bg-gray-50 w-full rounded-xl flex justify-between lg:p-10 p-6 items-center">
+                    <div class="bg-gray-50 w-full rounded-xl flex justify-between p-2 sm:p-6 lg:pr-6 lg:pl-4 xl:p-10 items-center">
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div class="relative">
                                 <!-- Main progress circle -->
-                                <div class="relative w-16 h-16 sm:w-25 sm:h-25 lg:w-36 lg:h-36">
+                                <div class="relative w-16 h-16 sm:w-25 sm:h-25 lg:w-34 lg:h-34">
                                     <svg class="progress-ring w-full h-full" viewBox="0 0 120 120">
                                         <!-- Background circle -->
                                         <circle class="progress-circle" cx="60" cy="60" r="50"></circle>
@@ -256,17 +252,17 @@
                                     <!-- Percentage text -->
                                     <div class="absolute inset-0 flex items-center justify-center">
                                         <span
-                                            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">35%</span>
+                                            class="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-800">35%</span>
                                     </div>
                                 </div>
                                 <!-- Decorative dots -->
-                                <div class="absolute top-0 -right-2 w-3.5 h-3.5 bg-green-400 rounded-full"></div>
-                                <div class="absolute bottom-2 right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                                <div class="absolute bottom-2 -left-3 w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute top-0 -right-2 w-3.5 h-3.5 bg-green-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute bottom-2 right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+                                <div class="xl:block hidden absolute bottom-2 -left-3 w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
                             </div>
                         </div>
-                        <div class="text-center sm:text-left">
-                            <span class="font-bold font-nunito text-xl sm:text-2xl lg:text-4xl block">$1000</span>
+                        <div class="text-center sm:text-left lg:pl-2">
+                            <span class="font-bold font-nunito text-xl sm:text-2xl lg:text-3xl xl:text-4xl block">$1000</span>
                             <span class="font-roboto text-neutral-400 text-sm lg:text-base">Total Profit</span>
                         </div>
                     </div>
@@ -274,9 +270,9 @@
             </div>
 
             <!-- Sales & Costumer Overview -->
-            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-8 m-8">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-8 m-4 lg:m-6 xl:m-8">
                 <!-- Sales Breakdown -->
-                <div class="bg-white rounded-xl py-6 px-4 lg:px-8">
+                <div class="bg-white rounded-3.5xl xl:rounded-5xl p-4 xl:p-6">
                     <span class="font-roboto text-lg font-medium">Sales Breakdown</span>
                     <div class="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <!-- Ad Span -->
@@ -360,7 +356,7 @@
                     </div>
                 </div>
                 <!-- Costumer Overview -->
-                <div class="bg-white w-full rounded-xl py-6 px-4 lg:px-8">
+                <div class="bg-white w-full rounded-5xl p-4 xl:p-6">
                     <span class="font-roboto text-lg font-medium">Customer Demograph</span>
                     <div class="max-lg:flex justify-between">
                         <div class="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-6 max-lg:flex-1">
@@ -437,9 +433,9 @@
             </div>
 
             <!-- Sales Breakdown -->
-            <div class="bg-white m-8 rounded-xl py-6">
-                <span class="font-roboto text-xl lg:text-xl font-medium lg:px-8 px-4">Sales Breakdown</span>
-                <div class="hidden lg:block">
+            <div class="bg-white m-4 lg:m-6 xl:m-8 rounded-3.5xl xl:rounded-5xl p-4 xl:p-6">
+                <span class="font-roboto text-lg font-medium">Sales Breakdown</span>
+                <div class="hidden xl:block">
                     <table class="w-full mt-4 font-nunito border-collapse table-fixed">
                         <thead>
                             <tr class="border-y-2 border-neutral-200 text-left text-base">
@@ -554,7 +550,7 @@
                     </table>
                 </div>
                 <!-- Mobile Card View -->
-                <div class="lg:hidden mt-4 px-4 space-y-4">
+                <div class="xl:hidden mt-4 px-4 space-y-4">
                     <!-- Card 1 -->
                     <div class="mobile-card paused bg-white border rounded-xl p-4 shadow-sm">
                         <div class="flex items-center justify-between mb-3">
